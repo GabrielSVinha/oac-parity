@@ -13,9 +13,9 @@ module OAC
 
       # Adiciona o bit de paridade errado
       if generate_parity(number) == "par"
-	number = "1" + number
+        number = "1" + number
       else
-	number = "0" + number
+        number = "0" + number
       end
 
       assert Parity.error?(number, 'par')
@@ -28,9 +28,9 @@ module OAC
 
       # Adiciona o bit de paridade errado
       if generate_parity(number) == "impar"
-	number = "1" + number
+        number = "1" + number
       else
-	number = "0" + number
+        number = "0" + number
       end
 
       assert Parity.error?(number, 'impar')
@@ -42,9 +42,9 @@ module OAC
 
       # Adiciona o bit de paridade certo
       if generate_parity(number) == "par"
-	number = "0" + number
+        number = "0" + number
       else
-	number = "1" + number
+        number = "1" + number
       end
 
       assert !Parity.error?(number, 'par')
@@ -55,9 +55,9 @@ module OAC
 
       # Adiciona o bit de paridade certo
       if generate_parity(number) == "impar"
-	number = "1" + number
+        number = "1" + number
       else
-	number = "0" + number
+        number = "0" + number
       end
 
       assert !Parity.error?(number, 'par')
@@ -69,11 +69,11 @@ module OAC
       parity = ""
       number.each_char do |bit|
         if bit == '1'
-	  uppers += 1
+          uppers += 1
         end
       end
       if uppers % 2 == 0
-	parity = "par"
+        parity = "par"
       else
         parity = "impar"
       end
